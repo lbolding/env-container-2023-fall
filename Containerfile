@@ -1,6 +1,8 @@
 FROM debian:stable
 RUN apt update && \
-    apt install -y wget git gnupg software-properties-common build-essential python3-sh sudo default-jdk python3-antlr4 && \
+    apt install -y wget git gnupg software-properties-common build-essential python3-sh sudo && \
+    apt install -y default-jdk && \
+    apt install -y python3-antlr4 && \
     wget https://www.antlr.org/download/antlr-4.9.1-complete.jar -O /usr/local/share/antlr.jar && \
     useradd -m user && \
     chmod 660 /etc/sudoers && echo "user     ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers && chmod 440 /etc/sudoers
